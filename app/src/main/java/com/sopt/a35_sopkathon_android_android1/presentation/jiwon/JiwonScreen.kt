@@ -30,7 +30,7 @@ fun JiwonScreen(
         Text(
             text = "지원 스크린",
             modifier = Modifier.clickable(onClick = navigateToMinjae),
-            color = JJanfficialTheme.colors.primaryBlack1
+            color = JJanfficialTheme.colors.primaryGreen1
         )
     }
 }

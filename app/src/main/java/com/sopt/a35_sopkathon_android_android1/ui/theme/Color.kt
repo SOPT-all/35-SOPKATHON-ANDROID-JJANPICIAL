@@ -8,26 +8,26 @@ val Black = Color(0xFF000000)
 val White = Color(0xFFFFFFFF)
 
 // Primary
-val PrimaryGreen1 = Color(0x00C911FF)
-val PrimaryBlack1 = Color(0x1F2A37FF)
+val PrimaryGreen1 = Color(0xFF00C911)
+val PrimaryBlack1 = Color(0xFF1F2A37)
 
 // Secondary
-val SubGreen1 = Color(0x00810DFF)
-val SubGreen2 = Color(0xB0E742FF)
+val SubGreen1 = Color(0xFF00810D)
+val SubGreen2 = Color(0xFFB0E742)
 
 // Gray Scale
-val Gray25 = Color(0xFCFCFDFF)
-val Gray50 = Color(0xF9FAFBFF)
-val Gray100 = Color(0xF3F4F6FF)
-val Gray200 = Color(0xE5E7EBFF)
-val Gray300 = Color(0xD2D6DBFF)
-val Gray400 = Color(0x9DA4AEFF)
-val Gray500 = Color(0x6C737FFF)
-val Gray600 = Color(0x4D5761FF)
-val Gray700 = Color(0x384250FF)
-val Gray800 = Color(0x1F2A37FF)
-val Gray900 = Color(0x111927FF)
-val Gray950 = Color(0x0D121CFF)
+val Gray25 = Color(0xFFFCFCFD)
+val Gray50 = Color(0xFFF9FAFB)
+val Gray100 = Color(0xFFF3F4F6)
+val Gray200 = Color(0xFFE5E7EB)
+val Gray300 = Color(0xFFD2D6DB)
+val Gray400 = Color(0xFF9DA4AE)
+val Gray500 = Color(0xFF6C737F)
+val Gray600 = Color(0xFF4D5761)
+val Gray700 = Color(0xFF384250)
+val Gray800 = Color(0xFF1F2A37)
+val Gray900 = Color(0xFF111927)
+val Gray950 = Color(0xFF0D121C)
 
 @Immutable
 data class JJanfficialColors(
