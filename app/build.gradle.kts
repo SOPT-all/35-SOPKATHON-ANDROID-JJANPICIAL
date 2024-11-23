@@ -48,7 +48,7 @@ android {
         buildConfig = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.3" // Compose 최신 컴파일러 버전 명시
+        kotlinCompilerExtensionVersion = "1.5.3"
     }
 }
 
