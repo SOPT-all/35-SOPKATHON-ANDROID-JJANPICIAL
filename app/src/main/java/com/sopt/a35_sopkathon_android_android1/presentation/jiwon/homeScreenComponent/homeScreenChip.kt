@@ -30,6 +30,7 @@ fun homeScreenChip(
     ){
         Text(
             text = content,
+            style = JJanPicialTheme.typography.body3Regular,
             color = JJanPicialTheme.colors.gray700,
         )
     }
