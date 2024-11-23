@@ -36,7 +36,7 @@ fun MainNavHost(
     ) {
         NavHost(
             navController = navController,
-            startDestination = "jiwon",
+            startDestination = "minjae",
         ) {
             composable(route = "jiwon") {
                 JiwonRoute(
