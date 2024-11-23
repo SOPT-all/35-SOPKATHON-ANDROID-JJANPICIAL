@@ -1,21 +1,31 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.hilt.android)
+    id("kotlin-kapt") // kapt 플러그인 추가
+}
+
+val properties = Properties().apply {
+    load(project.rootProject.file("local.properties").inputStream())
 }
 
 android {
-    namespace = "com.sopt.a35_sopkathon_android_android1"
+    namespace = "com.sopt.korailtalk"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.sopt.a35_sopkathon_android_android1"
+        applicationId = "com.sopt.korailtalk"
         minSdk = 34
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String","BASE_URL", properties["base.url"].toString())
     }
 
     buildTypes {
@@ -36,7 +46,12 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
+}
+
+hilt {
+    enableAggregatingTask = false
 }
 
 dependencies {
@@ -56,4 +71,16 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    // Hilt
+    implementation(libs.hilt.android)
+    implementation(libs.hilt.navigation.compose)
+    implementation(libs.androidx.appcompat)
+    kapt(libs.hilt.compiler)
+    // Network
+    implementation(platform(libs.okhttp.bom))
+    implementation(libs.okhttp)
+    implementation(libs.okhttp.logging.interceptor)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.kotlin.serialization.converter)
+    implementation(libs.kotlinx.serialization.json)
 }
