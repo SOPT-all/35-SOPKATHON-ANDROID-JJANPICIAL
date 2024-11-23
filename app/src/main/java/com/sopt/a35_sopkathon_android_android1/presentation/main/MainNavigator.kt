@@ -14,8 +14,8 @@ fun NavController.navigateToMinjae() {
     navigate("minjae")
 }
 
-fun NavController.navigateToSehun() {
-    navigate("sehun")
+fun NavController.navigateToSehun(partName: String) {
+    navigate("sehun/{$partName}")
 }
 
 fun NavController.navigateToMinjae2() {

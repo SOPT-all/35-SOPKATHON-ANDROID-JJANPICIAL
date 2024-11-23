@@ -48,7 +48,7 @@ data class JJanPicialColors(
     val gray700: Color,
     val gray800: Color,
     val gray900: Color,
-    val gray950: Color
+    val gray950: Color,
 )
 
 val defaultJJanPicialColors = JJanPicialColors(
