@@ -87,3 +87,8 @@
 ### **7. 안드로이드 팀원들의 사진(before)**
 
 <img width="336" alt="image" src="https://github.com/user-attachments/assets/5c9a35fb-bbd7-473d-9eac-b3552f6e4f38">
+
+### **8. 시연 영상**
+
+https://github.com/user-attachments/assets/b995393f-c854-4b64-bbcd-c8f45cb4ec4c
+
