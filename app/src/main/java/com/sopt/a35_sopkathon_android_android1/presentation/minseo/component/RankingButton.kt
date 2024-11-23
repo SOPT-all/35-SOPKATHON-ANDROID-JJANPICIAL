@@ -5,6 +5,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -29,7 +30,7 @@ fun RankingButton(
         modifier = modifier
             .padding(bottom = 8.dp)
             .fillMaxWidth()
-            .height(73.dp)
+            .aspectRatio(160f/73f)
             .background(color = JJanPicialTheme.colors.gray100, shape = RoundedCornerShape(8.dp))
             .clickable(
                 interactionSource = interactionSource,
