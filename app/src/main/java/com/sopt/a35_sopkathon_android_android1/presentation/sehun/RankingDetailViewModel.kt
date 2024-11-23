@@ -18,7 +18,7 @@ class RankingDetailViewModel : ViewModel() {
         viewModelScope.launch {
             runCatching {
                 ServicePool.rankingService.getExampleData(
-                    partName.replace("{", "").replace("}", "")
+                    partName
                 )
             }.onSuccess {
                 _uiState.value = it.toUi()

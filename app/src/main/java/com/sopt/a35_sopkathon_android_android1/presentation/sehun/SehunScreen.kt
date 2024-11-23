@@ -11,6 +11,9 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -27,10 +30,11 @@ fun SehunRoute(
     onBackPressed: () -> Unit,
     onBattleClick: (String) -> Unit,
     rankingDetailViewModel: RankingDetailViewModel = viewModel(),
-    partName: String
+    partName: String,
 ) {
+    val partDetailName by remember { mutableStateOf(partName.replace("{", "").replace("}", "")) }
     LaunchedEffect(Unit) {
-        rankingDetailViewModel.getPartRanking(partName)
+        rankingDetailViewModel.getPartRanking(partDetailName)
     }
 
     val uiState = rankingDetailViewModel.uiState.collectAsStateWithLifecycle()
@@ -39,7 +43,16 @@ fun SehunRoute(
         name = uiState.value.loginUser?.name.orEmpty(),
         jbti = uiState.value.loginUser?.jbti.orEmpty(),
         jpLevel = uiState.value.loginUser?.jpLevel ?: 0.0,
-        partName = uiState.value.loginUser?.part.orEmpty(),
+        myPartName = uiState.value.loginUser?.part.orEmpty(),
+        partName = when (partDetailName) {
+            "plan" -> "기획"
+            "design" -> "디자인"
+            "server" -> "서버"
+            "android" -> "안드로이드"
+            "ios" -> "아요"
+            "web" -> "웹"
+            else -> "안드로이드"
+        },
         imageUrl = uiState.value.loginUser?.imageUrl.orEmpty(),
         users = uiState.value.ranking,
         onBattleClick = onBattleClick,
@@ -56,6 +69,7 @@ fun SehunScreen(
     users: List<RankingUiState.Ranking>,
     onBattleClick: (String) -> Unit,
     onBackPressed: () -> Unit,
+    myPartName: String,
     partName: String,
 ) {
     Column(
@@ -78,7 +92,7 @@ fun SehunScreen(
             name = name,
             jbti = jbti,
             jpLevel = jpLevel,
-            partName = partName,
+            partName = myPartName,
             imageUrl = imageUrl,
         )
         Spacer(modifier = Modifier.height(height = 24.dp))
