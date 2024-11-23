@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanfficialTheme
+import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanPicialTheme
 
 @Composable
 fun MinseoRoute() {
@@ -29,7 +29,7 @@ fun MinseoScreen() {
 @Preview(showBackground = true)
 @Composable
 fun ShowMinseoScreen() {
-    JJanfficialTheme {
+    JJanPicialTheme {
         MinseoScreen()
     }
 }

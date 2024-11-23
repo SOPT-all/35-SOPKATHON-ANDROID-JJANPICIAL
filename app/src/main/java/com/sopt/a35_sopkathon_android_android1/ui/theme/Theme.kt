@@ -11,37 +11,40 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
-object JJanfficialTheme {
-    val colors: JJanfficialColors
+object JJanPicialTheme {
+    val colors: JJanPicialColors
         @Composable
         @ReadOnlyComposable
-        get() = LocalJJanfficalColors.current
+        get() = LocalJJanPicalColors.current
 
-//    val typography: JJanfficialTypography
-//        @Composable
-//        @ReadOnlyComposable
-//        get() = LocalJJanfficialTypography.current
+    val typography: JJanPicialTypography
+        @Composable
+        @ReadOnlyComposable
+        get() = LocalJJanPicialTypography.current
 }
 
 @Composable
-fun provideJJanfficialColorsAndTypography(
-    colors: JJanfficialColors,
-    //typography: JJanfficialTypography,
+fun provideJJanPicialColorsAndTypography(
+    colors: JJanPicialColors,
+    typography: JJanPicialTypography,
     content: @Composable () -> Unit
 ) {
     CompositionLocalProvider(
-        LocalJJanfficalColors provides colors,
-        //LocalJJanfficialTypography provides typography,
+        LocalJJanPicalColors provides colors,
+        LocalJJanPicialTypography provides typography,
         content = content,
     )
 }
 
 @Composable
-fun JJanfficialTheme(content: @Composable () -> Unit) {
-    val color = defaultJJanfficialColors
-    //val typography = defaultJJanfficialTypography
+fun JJanPicialTheme(content: @Composable () -> Unit) {
+    val color = defaultJJanPicialColors
+    val typography = defaultJJanPicialTypography
 
-    provideJJanfficialColorsAndTypography(color /*typography*/) {
+    provideJJanPicialColorsAndTypography(
+        colors = color,
+        typography = typography
+    ){
         val view = LocalView.current
         if (!view.isInEditMode) {
             SideEffect {

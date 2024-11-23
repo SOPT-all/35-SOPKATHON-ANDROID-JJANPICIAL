@@ -30,7 +30,7 @@ val Gray900 = Color(0xFF111927)
 val Gray950 = Color(0xFF0D121C)
 
 @Immutable
-data class JJanfficialColors(
+data class JJanPicialColors(
     val black: Color,
     val white: Color,
     val primaryGreen1: Color,
@@ -51,7 +51,7 @@ data class JJanfficialColors(
     val gray950: Color
 )
 
-val defaultJJanfficialColors = JJanfficialColors(
+val defaultJJanPicialColors = JJanPicialColors(
     black = Black,
     white = White,
     primaryGreen1 = PrimaryGreen1,
@@ -72,4 +72,4 @@ val defaultJJanfficialColors = JJanfficialColors(
     gray950 = Gray950
 )
 
-val LocalJJanfficalColors = staticCompositionLocalOf { defaultJJanfficialColors }
+val LocalJJanPicalColors = staticCompositionLocalOf { defaultJJanPicialColors }

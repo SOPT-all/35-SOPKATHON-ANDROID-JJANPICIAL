@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanfficialTheme
+import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanPicialTheme
 
 @Composable
 fun JiwonRoute(
@@ -30,7 +30,8 @@ fun JiwonScreen(
         Text(
             text = "지원 스크린",
             modifier = Modifier.clickable(onClick = navigateToMinjae),
-            color = JJanfficialTheme.colors.primaryGreen1
+            color = JJanPicialTheme.colors.primaryGreen1,
+            style = JJanPicialTheme.typography.body1Bold
         )
     }
 }
@@ -38,7 +39,7 @@ fun JiwonScreen(
 @Preview(showBackground = true)
 @Composable
 fun ShowJiwonScreen() {
-    JJanfficialTheme {
+    JJanPicialTheme {
         JiwonScreen(
             navigateToMinjae = {}
         )
