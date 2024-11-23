@@ -7,6 +7,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
@@ -19,9 +23,13 @@ class MainActivity : ComponentActivity() {
         setContent {
             JJanPicialTheme {
                 val navController = rememberNavController()
+                var showDialog by remember { mutableStateOf(false) }
+
                 Scaffold { paddingValues ->
                     MainNavHost(
                         navController = navController,
+                        showDialog=showDialog,
+                        onDismissRequest = { showDialog = false},
                         modifier = Modifier.padding(paddingValues)
                     )
                 }
