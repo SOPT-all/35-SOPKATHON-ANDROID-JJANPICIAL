@@ -92,7 +92,7 @@ fun MinjaeScreen5(
                     style = JJanPicialTheme.typography.head1Bold
                 )
                 Text(
-                    text = "$userJpLevel",
+                    text = "${roundToTwoDecimalPlaces(userJpLevel)} JP",
                     color = JJanPicialTheme.colors.gray25,
                     style = JJanPicialTheme.typography.head2Bold
                 )
@@ -108,4 +108,8 @@ fun MinjaeScreen5(
             onClick = {}
         )
     }
+}
+
+fun roundToTwoDecimalPlaces(value: Double): Double {
+    return "%.2f".format(value).toDouble()
 }

@@ -149,8 +149,8 @@ class MinjaeViewModel : ViewModel() {
             runCatching {
                 userRegistrationService.getUserInfo()
             }.onSuccess { response ->
-                _userJpLevel.value = response.data?.jpLevel ?: 0.0
-                _userJbti.value = response.data?.jbti ?: ""
+                _userJpLevel.value = response.jpLevel
+                _userJbti.value = response.jbti
             }.onFailure { throwable ->
                 Log.e("MinjaeViewModel", "Failed to get user info", throwable)
             }

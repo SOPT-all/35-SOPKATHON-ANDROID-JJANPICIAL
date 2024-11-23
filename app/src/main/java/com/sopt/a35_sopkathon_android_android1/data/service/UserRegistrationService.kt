@@ -11,8 +11,8 @@ interface UserRegistrationService {
     @POST("/api/user")
     suspend fun postUserRegistration(
         @Body userRegistrationRequestDto: UserRegistrationRequestDto
-    ): ApiResponse<Unit>
+    )
 
     @GET("api/auth-info")
-    suspend fun getUserInfo(): ApiResponse<UserInfoResponseDto>
+    suspend fun getUserInfo(): UserInfoResponseDto
 }
