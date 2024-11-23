@@ -92,3 +92,7 @@
 
 https://github.com/user-attachments/assets/b995393f-c854-4b64-bbcd-c8f45cb4ec4c
 
+### **9. 안드로이드 팀원들의 사진(after)**
+
+![KakaoTalk_Photo_2024-11-24-08-25-08](https://github.com/user-attachments/assets/248ab7b9-0721-4e87-82c6-e574ee789671)
+
