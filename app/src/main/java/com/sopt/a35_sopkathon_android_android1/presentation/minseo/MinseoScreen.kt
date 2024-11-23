@@ -1,4 +1,4 @@
-package com.sopt.a35_sopkathon_android_android1.minjae
+package com.sopt.a35_sopkathon_android_android1.presentation.minseo
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -7,29 +7,26 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.sopt.a35_sopkathon_android_android1.sehun.SehunScreen
 
 @Composable
-fun MinjaeRoute() {
-    MinjaeScreen()
+fun MinseoRoute() {
+    MinseoScreen()
 }
 
 @Composable
-fun MinjaeScreen(
-
-) {
+fun MinseoScreen() {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
         Text(
-            text = "민재 스크린"
+            text = "민서 스크린"
         )
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun ShowMinjaeScreen() {
-    MinjaeScreen()
+fun ShowMinseoScreen() {
+    MinseoScreen()
 }

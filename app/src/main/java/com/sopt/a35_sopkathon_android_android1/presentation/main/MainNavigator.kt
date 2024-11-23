@@ -1,7 +1,6 @@
-package com.sopt.a35_sopkathon_android_android1
+package com.sopt.a35_sopkathon_android_android1.presentation.main
 
 import androidx.navigation.NavController
-import androidx.navigation.NavHostController
 
 fun NavController.navigateToJiwon() {
     navigate("jiwon")
