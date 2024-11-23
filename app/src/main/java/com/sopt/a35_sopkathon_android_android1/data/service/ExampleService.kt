@@ -13,6 +13,6 @@ interface ExampleService {
 
     @POST("api/v1/data")
     suspend fun postExampleData(
-        @Body exampleRequestDto: ExampleRequestDto
+        @Body exampleRequestDto: ExampleRequestDto,
     ): ApiResponse<Unit>
 }

@@ -27,7 +27,7 @@ object JJanPicialTheme {
 fun provideJJanPicialColorsAndTypography(
     colors: JJanPicialColors,
     typography: JJanPicialTypography,
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
     CompositionLocalProvider(
         LocalJJanPicalColors provides colors,
@@ -44,7 +44,7 @@ fun JJanPicialTheme(content: @Composable () -> Unit) {
     provideJJanPicialColorsAndTypography(
         colors = color,
         typography = typography
-    ){
+    ) {
         val view = LocalView.current
         if (!view.isInEditMode) {
             SideEffect {
