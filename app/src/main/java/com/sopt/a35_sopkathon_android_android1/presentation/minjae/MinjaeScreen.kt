@@ -25,7 +25,7 @@ import com.sopt.a35_sopkathon_android_android1.R
 import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanPicialTheme
 
 @Composable
-fun MinjaeRoute(
+fun MinjaeScreenRoute(
     minjaeViewModel: MinjaeViewModel,
     navigateToMinjae2: () -> Unit
 ) {
@@ -35,7 +35,6 @@ fun MinjaeRoute(
 
     val setUserName: (String) -> Unit = { newValue -> minjaeViewModel.setUserName(newValue) }
     val setUserPart: (String) -> Unit = { newValue -> minjaeViewModel.setUserPart(newValue) }
-
 
     MinjaeScreen(
         userName = userName,

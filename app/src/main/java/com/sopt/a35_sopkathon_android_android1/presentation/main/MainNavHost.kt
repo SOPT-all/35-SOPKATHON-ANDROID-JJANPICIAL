@@ -9,7 +9,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.sopt.a35_sopkathon_android_android1.presentation.jiwon.JiwonRoute
-import com.sopt.a35_sopkathon_android_android1.presentation.minjae.MinjaeRoute
 import com.sopt.a35_sopkathon_android_android1.presentation.minjae.MinjaeViewModel
 import com.sopt.a35_sopkathon_android_android1.presentation.minjae.minjaeNavGraph
 import com.sopt.a35_sopkathon_android_android1.presentation.minseo.MinseoRoute
