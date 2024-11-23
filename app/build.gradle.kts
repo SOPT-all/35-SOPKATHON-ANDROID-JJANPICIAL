@@ -18,7 +18,7 @@ android {
 
     defaultConfig {
         applicationId = "com.sopt.a35_sopkathon_android_android1"
-        minSdk = 34
+        minSdk = 31
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
