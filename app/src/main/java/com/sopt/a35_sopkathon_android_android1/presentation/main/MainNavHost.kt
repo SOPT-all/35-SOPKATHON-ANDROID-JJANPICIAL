@@ -26,7 +26,7 @@ fun MainNavHost(
         ) {
             composable(route = "jiwon") {
                 JiwonRoute(
-                    navigateToMinjae = { navController.navigateToMinjae() }
+                    navigateToMinseo = { navController.navigateToMinseo() }
                 )
             }
 
