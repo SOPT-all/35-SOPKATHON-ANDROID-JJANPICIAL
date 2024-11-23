@@ -30,7 +30,7 @@ fun JiwonScreen(
         Text(
             text = "지원 스크린",
             modifier = Modifier.clickable(onClick = navigateToMinjae),
-            color = JJanfficialTheme.colors.Gray25
+            color = JJanfficialTheme.colors.primaryBlack1
         )
     }
 }
@@ -38,7 +38,9 @@ fun JiwonScreen(
 @Preview(showBackground = true)
 @Composable
 fun ShowJiwonScreen() {
-    JiwonScreen(
-        navigateToMinjae = {}
-    )
+    JJanfficialTheme {
+        JiwonScreen(
+            navigateToMinjae = {}
+        )
+    }
 }

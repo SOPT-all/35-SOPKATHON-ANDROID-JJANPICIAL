@@ -17,12 +17,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            val navController = rememberNavController()
-            Scaffold { paddingValues ->
-                MainNavHost(
-                    navController = navController,
-                    modifier = Modifier.padding(paddingValues)
-                )
+            JJanfficialTheme {
+                val navController = rememberNavController()
+                Scaffold { paddingValues ->
+                    MainNavHost(
+                        navController = navController,
+                        modifier = Modifier.padding(paddingValues)
+                    )
+                }
             }
         }
     }
