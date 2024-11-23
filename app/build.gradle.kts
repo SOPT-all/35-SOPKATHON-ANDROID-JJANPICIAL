@@ -5,7 +5,6 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.hilt.android)
     id("kotlin-kapt") // kapt 플러그인 추가
 }
 
@@ -50,10 +49,6 @@ android {
     }
 }
 
-hilt {
-    enableAggregatingTask = false
-}
-
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -72,10 +67,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     // Hilt
-    implementation(libs.hilt.android)
-    implementation(libs.hilt.navigation.compose)
     implementation(libs.androidx.appcompat)
-    kapt(libs.hilt.compiler)
     // Network
     implementation(platform(libs.okhttp.bom))
     implementation(libs.okhttp)
