@@ -18,7 +18,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.sopt.a35_sopkathon_android_android1.R
 import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanPicialTheme
@@ -65,7 +64,7 @@ fun JJanBattleDialog(
         )
 
         Button(
-            onClick = {},
+            onClick = onClick,
             modifier = Modifier
                 .padding(30.dp)
                 .fillMaxWidth()
@@ -80,9 +79,4 @@ fun JJanBattleDialog(
             )
         }
     }
-}
-
-@Preview
-@Composable
-fun ShowJJanBattleDialog() {
 }

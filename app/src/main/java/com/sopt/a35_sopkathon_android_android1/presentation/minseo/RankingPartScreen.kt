@@ -19,7 +19,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.sopt.a35_sopkathon_android_android1.R
 import com.sopt.a35_sopkathon_android_android1.presentation.minseo.component.RankingButton
@@ -28,11 +27,12 @@ import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanPicialTheme
 @Composable
 fun RankingPartScreen(
     modifier: Modifier = Modifier,
+    navigateToSehun: (String) -> Unit,
 ) {
     Column(
         modifier = modifier
             .fillMaxSize()
-            .padding(top = 20.dp)
+            .padding(horizontal = 16.dp).padding(top = 20.dp),
     ) {
         Row {
             Text(
@@ -77,7 +77,8 @@ fun RankingPartScreen(
                     .weight(1f)
             ) {
                 Box {
-                    RankingButton(part = "기획", onClick = {})
+                    RankingButton(part = "기획", onClick = { navigateToSehun("plan")})
+
                     Image(
                         painter = painterResource(R.drawable.img_chip_ranking_rank2),
                         contentDescription = null,
@@ -87,9 +88,9 @@ fun RankingPartScreen(
                             .align(alignment = Alignment.TopEnd)
                     )
                 }
-                RankingButton(part = "웹", onClick = {})
+                RankingButton(part = "웹", onClick = {navigateToSehun("web")})
                 Box {
-                    RankingButton(part = "안드", onClick = {})
+                    RankingButton(part = "안드", onClick = {navigateToSehun("android")})
                     Image(
                         painter = painterResource(R.drawable.img_chip_ranking_rank3),
                         contentDescription = null,
@@ -107,10 +108,10 @@ fun RankingPartScreen(
                     .fillMaxWidth()
                     .weight(1f)
             ) {
-                RankingButton(part = "디자인", onClick = {})
-                RankingButton(part = "아요", onClick = {})
+                RankingButton(part = "디자인", onClick = {navigateToSehun("design")})
+                RankingButton(part = "아요", onClick = {navigateToSehun("ios")})
                 Box {
-                    RankingButton(part = "서버", onClick = {})
+                    RankingButton(part = "서버", onClick = {navigateToSehun("server")})
                     Image(
                         painter = painterResource(R.drawable.img_chip_ranking_rank1),
                         contentDescription = null,
@@ -125,10 +126,3 @@ fun RankingPartScreen(
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun ShowRankingPartScreen() {
-    JJanPicialTheme {
-        RankingPartScreen()
-    }
-}

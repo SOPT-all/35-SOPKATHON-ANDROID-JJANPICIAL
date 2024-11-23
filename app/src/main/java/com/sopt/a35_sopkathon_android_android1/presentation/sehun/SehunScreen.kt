@@ -25,11 +25,12 @@ import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanPicialTheme.typograp
 @Composable
 fun SehunRoute(
     onBackPressed: () -> Unit,
-    onBattleClick: () -> Unit,
+    onBattleClick: (String) -> Unit,
     rankingDetailViewModel: RankingDetailViewModel = viewModel(),
+    partName: String
 ) {
     LaunchedEffect(Unit) {
-        rankingDetailViewModel.getPartRanking()
+        rankingDetailViewModel.getPartRanking(partName)
     }
 
     val uiState = rankingDetailViewModel.uiState.collectAsStateWithLifecycle()
@@ -53,7 +54,7 @@ fun SehunScreen(
     jpLevel: Double,
     imageUrl: String,
     users: List<RankingUiState.Ranking>,
-    onBattleClick: () -> Unit,
+    onBattleClick: (String) -> Unit,
     onBackPressed: () -> Unit,
     partName: String,
 ) {

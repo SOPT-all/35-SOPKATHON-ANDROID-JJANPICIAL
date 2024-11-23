@@ -35,7 +35,7 @@ fun RankingButton(
                 interactionSource = interactionSource,
                 indication = null
             ) {
-                onClick
+                onClick()
             },
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center

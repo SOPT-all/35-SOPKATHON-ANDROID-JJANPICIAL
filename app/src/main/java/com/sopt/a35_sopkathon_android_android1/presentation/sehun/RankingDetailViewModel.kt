@@ -14,10 +14,12 @@ class RankingDetailViewModel : ViewModel() {
     private val _uiState: MutableStateFlow<RankingUiState> = MutableStateFlow(RankingUiState())
     val uiState: StateFlow<RankingUiState> get() = _uiState.asStateFlow()
 
-    fun getPartRanking() {
+    fun getPartRanking(partName: String) {
         viewModelScope.launch {
             runCatching {
-                ServicePool.rankingService.getExampleData("all")
+                ServicePool.rankingService.getExampleData(
+                    partName.replace("{", "").replace("}", "")
+                )
             }.onSuccess {
                 _uiState.value = it.toUi()
             }.onFailure {

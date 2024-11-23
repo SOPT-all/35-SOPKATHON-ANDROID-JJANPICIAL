@@ -22,6 +22,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import coil.compose.rememberAsyncImagePainter
 import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanPicialTheme
 import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanPicialTheme.colors
 import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanPicialTheme.typography
@@ -35,7 +36,7 @@ fun RankingItem(
     imageUrl: String,
     jpLevel: Double,
     partName: String,
-    onBattleClick: () -> Unit,
+    onBattleClick: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Row(
@@ -51,6 +52,7 @@ fun RankingItem(
                 vertical = 14.dp,
             ),
     ) {
+
         AsyncImage(
             model = imageUrl,
             contentDescription = null,
@@ -112,7 +114,7 @@ fun RankingItem(
                     horizontal = 10.dp,
                     vertical = 6.dp,
                 ).clickable {
-                    onBattleClick()
+                    onBattleClick(name)
                 },
         )
     }

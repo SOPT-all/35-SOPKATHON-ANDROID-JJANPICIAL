@@ -23,7 +23,7 @@ import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanPicialTheme.typograp
 
 @Composable
 fun RankingAllScreen(
-    onBattleClick: () -> Unit,
+    onBattleClick: (String) -> Unit,
     rankingViewModel: RankingViewModel = viewModel(),
 ) {
     LaunchedEffect(Unit) {
@@ -50,7 +50,7 @@ private fun RankingAllScreen(
     jpLevel: Double,
     imageUrl: String,
     users: List<RankingUiState.Ranking>,
-    onBattleClick: () -> Unit,
+    onBattleClick: (String) -> Unit,
     partName: String,
 ) {
     Column(
