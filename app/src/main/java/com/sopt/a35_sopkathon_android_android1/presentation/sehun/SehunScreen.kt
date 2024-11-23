@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.sopt.a35_sopkathon_android_android1.presentation.minseo.RankingUiState
 import com.sopt.a35_sopkathon_android_android1.presentation.sehun.component.RankingItem
 import com.sopt.a35_sopkathon_android_android1.presentation.sehun.component.RankingMyInfoBox
 import com.sopt.a35_sopkathon_android_android1.presentation.sehun.component.RankingTopBar
@@ -25,13 +26,13 @@ import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanPicialTheme.typograp
 fun SehunRoute(
     onBackPressed: () -> Unit,
     onBattleClick: () -> Unit,
-    rankingViewModel: RankingViewModel = viewModel(),
+    rankingDetailViewModel: RankingDetailViewModel = viewModel(),
 ) {
     LaunchedEffect(Unit) {
-        rankingViewModel.getPartRanking()
+        rankingDetailViewModel.getPartRanking()
     }
 
-    val uiState = rankingViewModel.uiState.collectAsStateWithLifecycle()
+    val uiState = rankingDetailViewModel.uiState.collectAsStateWithLifecycle()
 
     SehunScreen(
         name = uiState.value.loginUser?.name.orEmpty(),
@@ -103,19 +104,4 @@ fun SehunScreen(
             }
         }
     }
-}
-
-data class RankingUiModel(
-    val loginUser: Ranking,
-    val ranking: Ranking,
-) {
-
-    data class Ranking(
-        val name: String,
-        val imageUrl: String,
-        val ranking: Int,
-        val jpLevel: Double,
-        val jbti: String,
-        val isLoginUser: Boolean,
-    )
 }

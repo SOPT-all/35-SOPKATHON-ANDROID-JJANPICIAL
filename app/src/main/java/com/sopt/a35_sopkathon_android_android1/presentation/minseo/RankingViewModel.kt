@@ -1,4 +1,4 @@
-package com.sopt.a35_sopkathon_android_android1.presentation.sehun
+package com.sopt.a35_sopkathon_android_android1.presentation.minseo
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -13,7 +13,7 @@ class RankingViewModel : ViewModel() {
     private val _uiState: MutableStateFlow<RankingUiState> = MutableStateFlow(RankingUiState())
     val uiState: StateFlow<RankingUiState> get() = _uiState.asStateFlow()
 
-    fun getPartRanking() {
+    fun getRanking() {
         viewModelScope.launch {
             runCatching {
                 ServicePool.rankingService.getExampleData("all")

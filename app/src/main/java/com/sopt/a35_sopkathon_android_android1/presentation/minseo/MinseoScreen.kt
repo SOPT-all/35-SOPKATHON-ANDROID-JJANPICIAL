@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -25,12 +25,18 @@ import androidx.compose.ui.unit.dp
 import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanPicialTheme
 
 @Composable
-fun MinseoRoute() {
-    RankingScreen()
+fun MinseoRoute(
+    onBattleClick: () -> Unit,
+) {
+    RankingScreen(
+        onBattleClick = onBattleClick,
+    )
 }
 
 @Composable
-fun RankingScreen() {
+fun RankingScreen(
+    onBattleClick: () -> Unit,
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -94,14 +100,14 @@ fun RankingScreen() {
                         style = JJanPicialTheme.typography.body2Medium
                     )
                 }
-                Divider(
+                HorizontalDivider(
                     modifier = Modifier.fillMaxWidth(),
+                    thickness = 2.dp,
                     color = if (isPartClicked) {
                         JJanPicialTheme.colors.primaryGreen1
                     } else {
                         JJanPicialTheme.colors.gray400
-                    },
-                    thickness = 2.dp
+                    }
                 )
             }
             Column(
@@ -133,14 +139,14 @@ fun RankingScreen() {
                         style = JJanPicialTheme.typography.body2Medium
                     )
                 }
-                Divider(
+                HorizontalDivider(
                     modifier = Modifier.fillMaxWidth(),
+                    thickness = 2.dp,
                     color = if (isAllClicked) {
                         JJanPicialTheme.colors.primaryGreen1
                     } else {
                         JJanPicialTheme.colors.gray400
-                    },
-                    thickness = 2.dp
+                    }
                 )
             }
         }
@@ -152,7 +158,9 @@ fun RankingScreen() {
             if (isPartClicked) {
                 RankingPartScreen()
             } else {
-                RankingAllScreen()
+                RankingAllScreen(
+                    onBattleClick = onBattleClick,
+                )
             }
         }
     }
@@ -162,6 +170,8 @@ fun RankingScreen() {
 @Composable
 fun ShowMinseoScreen() {
     JJanPicialTheme {
-        RankingScreen()
+        RankingScreen(
+            onBattleClick = {},
+        )
     }
 }

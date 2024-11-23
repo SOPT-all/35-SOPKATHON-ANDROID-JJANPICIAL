@@ -38,7 +38,9 @@ fun MainNavHost(
             }
 
             composable(route = "minseo") {
-                MinseoRoute()
+                MinseoRoute(
+                    onBattleClick = {},
+                )
             }
 
             composable(route = "minjae") {
