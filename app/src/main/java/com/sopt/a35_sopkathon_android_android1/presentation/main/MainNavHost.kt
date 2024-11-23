@@ -31,7 +31,10 @@ fun MainNavHost(
             }
 
             composable(route = "sehun") {
-                SehunRoute()
+                SehunRoute(
+                    onBackPressed = {},
+                    onBattleClick = {},
+                )
             }
 
             composable(route = "minseo") {
