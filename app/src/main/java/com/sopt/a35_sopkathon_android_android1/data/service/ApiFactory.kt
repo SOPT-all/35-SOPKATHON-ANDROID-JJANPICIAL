@@ -24,9 +24,7 @@ object ApiFactory {
             .baseUrl(BASE_URL)
             .client(client)
             .addConverterFactory(
-                Json {
-                    ignoreUnknownKeys = true
-                }.asConverterFactory("application/json".toMediaType())
+                Json { ignoreUnknownKeys = true }.asConverterFactory("application/json".toMediaType())
             )
             .build()
     }
@@ -36,5 +34,6 @@ object ApiFactory {
 
 object ServicePool {
     val exampleService = ApiFactory.create<ExampleService>()
+    val userRegistrationService = ApiFactory.create<UserRegistrationService>()
     val homeService = ApiFactory.create<HomeService>()
 }
