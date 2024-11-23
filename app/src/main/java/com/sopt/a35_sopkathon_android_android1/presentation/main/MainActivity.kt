@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
-import com.sopt.a35_sopkathon_android_android1.ui.theme._35SOPKATHONANDROIDandroid1Theme
+import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanfficialTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    _35SOPKATHONANDROIDandroid1Theme {
+    JJanfficialTheme {
 
     }
 }
