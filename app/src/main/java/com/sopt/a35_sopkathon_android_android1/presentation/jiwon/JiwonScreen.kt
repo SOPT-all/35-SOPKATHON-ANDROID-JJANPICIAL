@@ -25,16 +25,19 @@ import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanPicialTheme
 
 @Composable
 fun JiwonRoute(
-    navigateToMinjae: () -> Unit
+    navigateToMinjae: () -> Unit,
+    navigateToMinseo: () -> Unit,
 ) {
     JiwonScreen(
-        navigateToMinjae = navigateToMinjae
+        navigateToMinjae = navigateToMinjae,
+        navigateToMinseo = navigateToMinseo
     )
 }
 
 @Composable
 fun JiwonScreen(
     navigateToMinjae: () -> Unit,
+    navigateToMinseo: () -> Unit,
     modifier: Modifier = Modifier
 ) {
 
@@ -155,7 +158,7 @@ fun JiwonScreen(
 
                 homeScreenChip(
                     modifier = modifier,
-                    onClick = navigateToMinjae,
+                    onClick = navigateToMinseo,
                     content = "전체랭킹 >"
                 )
 
@@ -171,7 +174,8 @@ fun JiwonScreen(
 fun ShowJiwonScreen() {
     JJanPicialTheme {
         JiwonScreen(
-            navigateToMinjae = {}
+            navigateToMinjae = {},
+            navigateToMinseo = {}
         )
     }
 }
