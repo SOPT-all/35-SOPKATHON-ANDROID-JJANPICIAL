@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.sopt.a35_sopkathon_android_android1.R
 import com.sopt.a35_sopkathon_android_android1.presentation.jiwon.homeScreenComponent.homeScreenChip
+import com.sopt.a35_sopkathon_android_android1.presentation.minjae.roundToTwoDecimalPlaces
 import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanPicialTheme
 
 @Composable
@@ -261,13 +262,10 @@ fun JiwonScreen(
                     )
                 }
             }
-
-
         }
 
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable

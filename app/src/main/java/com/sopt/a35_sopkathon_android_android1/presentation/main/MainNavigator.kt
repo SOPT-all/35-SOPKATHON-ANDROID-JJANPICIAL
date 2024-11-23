@@ -17,3 +17,19 @@ fun NavController.navigateToMinjae() {
 fun NavController.navigateToSehun(partName: String) {
     navigate("sehun/{$partName}")
 }
+
+fun NavController.navigateToMinjae2() {
+    navigate("minjae2")
+}
+
+fun NavController.navigateToMinjae3() {
+    navigate("minjae3")
+}
+
+fun NavController.navigateToMinjae4() {
+    navigate("minjae4")
+}
+
+fun NavController.navigateToMinjae5() {
+    navigate("minjae5")
+}

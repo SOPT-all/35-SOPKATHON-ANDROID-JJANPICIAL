@@ -35,5 +35,6 @@ object ApiFactory {
 object ServicePool {
     val exampleService = ApiFactory.create<ExampleService>()
     val rankingService: RankingService by lazy { ApiFactory.create() }
+    val userRegistrationService = ApiFactory.create<UserRegistrationService>()
     val homeService = ApiFactory.create<HomeService>()
 }
