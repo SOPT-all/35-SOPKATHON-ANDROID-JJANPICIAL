@@ -13,18 +13,18 @@ val properties = Properties().apply {
 }
 
 android {
-    namespace = "com.sopt.korailtalk"
+    namespace = "com.sopt.a35_sopkathon_android_android1"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.sopt.korailtalk"
+        applicationId = "com.sopt.a35_sopkathon_android_android1"
         minSdk = 34
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String","BASE_URL", properties["base.url"].toString())
+        buildConfigField("String", "BASE_URL", properties["base.url"].toString())
     }
 
     buildTypes {
@@ -47,18 +47,26 @@ android {
         compose = true
         buildConfig = true
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.3" // Compose 최신 컴파일러 버전 명시
+    }
 }
 
 dependencies {
-
+    // AndroidX Core
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
+
+    // Jetpack Compose
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.compose.navigation)
+
+    // Test Libraries
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -66,8 +74,11 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // AppCompat
     implementation(libs.androidx.appcompat)
-    // Network
+
+    // Networking
     implementation(platform(libs.okhttp.bom))
     implementation(libs.okhttp)
     implementation(libs.okhttp.logging.interceptor)
