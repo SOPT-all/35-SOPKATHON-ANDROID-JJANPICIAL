@@ -1,8 +1,14 @@
 package com.sopt.a35_sopkathon_android_android1.presentation.main
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.window.Dialog
 import androidx.navigation.NavHostController
@@ -17,10 +23,10 @@ import com.sopt.a35_sopkathon_android_android1.presentation.sehun.SehunRoute
 @Composable
 fun MainNavHost(
     navController: NavHostController,
-    showDialog:Boolean,
-    onDismissRequest:() -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    var showDialog by remember { mutableStateOf(false) }
+
     Box(
         modifier = modifier.fillMaxSize()
     ) {
@@ -37,13 +43,13 @@ fun MainNavHost(
             composable(route = "sehun") {
                 SehunRoute(
                     onBackPressed = {},
-                    onBattleClick = {},
+                    onBattleClick = {showDialog = true},
                 )
             }
 
             composable(route = "minseo") {
                 MinseoRoute(
-                    onBattleClick = {},
+                    onBattleClick = {showDialog = true},
                 )
             }
 
@@ -53,9 +59,14 @@ fun MainNavHost(
         }
       if(showDialog){
           Dialog(
-              onDismissRequest = onDismissRequest
+              onDismissRequest = {showDialog = false}
           ) {
-              ShowJJanBattleDialog()
+              Column(
+                  modifier = Modifier.fillMaxSize()
+              ) {
+                  Text("123123")
+              }
+              //ShowJJanBattleDialog()
           }
       }
     }

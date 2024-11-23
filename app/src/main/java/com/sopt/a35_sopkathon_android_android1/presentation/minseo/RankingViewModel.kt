@@ -1,5 +1,6 @@
 package com.sopt.a35_sopkathon_android_android1.presentation.minseo
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.sopt.a35_sopkathon_android_android1.data.dto.response.RankingResponseDto
@@ -20,6 +21,7 @@ class RankingViewModel : ViewModel() {
             }.onSuccess {
                 _uiState.value = it.toUi()
             }.onFailure {
+                Log.d("123123", it.toString())
                 _uiState.value = uiState.value.copy(isError = true)
             }
         }

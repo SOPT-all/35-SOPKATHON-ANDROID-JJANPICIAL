@@ -23,13 +23,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             JJanPicialTheme {
                 val navController = rememberNavController()
-                var showDialog by remember { mutableStateOf(false) }
 
                 Scaffold { paddingValues ->
                     MainNavHost(
                         navController = navController,
-                        showDialog=showDialog,
-                        onDismissRequest = { showDialog = false},
                         modifier = Modifier.padding(paddingValues)
                     )
                 }

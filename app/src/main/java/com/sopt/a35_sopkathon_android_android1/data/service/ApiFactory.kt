@@ -9,7 +9,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 
 object ApiFactory {
-    private val BASE_URL: String = BuildConfig.BASE_URL
+    private val BASE_URL: String = "http://jjan-fficial.site/"
     private val json = Json {
         ignoreUnknownKeys = true
     }
