@@ -1,16 +1,19 @@
 package com.sopt.a35_sopkathon_android_android1.presentation.jiwon
 
 import android.util.Log
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
@@ -20,9 +23,12 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.focus.focusModifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.sopt.a35_sopkathon_android_android1.R
 import com.sopt.a35_sopkathon_android_android1.presentation.jiwon.homeScreenComponent.homeScreenChip
 import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanPicialTheme
 
@@ -45,10 +51,8 @@ fun JiwonScreen(
     val userState = homeScreenViewModel.userState.value
 
     LaunchedEffect(Unit) {
-        homeScreenViewModel.getUserData(userId = 0)
+        homeScreenViewModel.getUserData()
     }
-
-    var name = homeScreenViewModel.userState.value?.name
 
     Column(
         modifier = modifier
@@ -68,7 +72,7 @@ fun JiwonScreen(
                     color = JJanPicialTheme.colors.black
                 )
                 Text(
-                    text = "$name",
+                    text = "${userState?.name}",
                     style = JJanPicialTheme.typography.head2Bold,
                     color = JJanPicialTheme.colors.primaryGreen1
                 )
@@ -91,7 +95,7 @@ fun JiwonScreen(
         Column(
             modifier = Modifier
                 .clip(shape = RoundedCornerShape(8.dp))
-                .height(500.dp)
+                .height(450.dp)
                 .fillMaxWidth()
                 .background(JJanPicialTheme.colors.primaryBlack1)
                 .padding(top = 30.dp, bottom = 10.dp, start = 20.dp, end = 20.dp),
@@ -107,36 +111,32 @@ fun JiwonScreen(
                     style = JJanPicialTheme.typography.head3Bold,
                     color = JJanPicialTheme.colors.white
                 )
-                Spacer(modifier = modifier.width(15.dp))
+                Spacer(modifier = modifier.width(25.dp))
                 Text(
-                    text = "잘취하는 거북이",
+                    text = "${userState?.jbti}",
                     style = JJanPicialTheme.typography.title1Bold,
                     color = JJanPicialTheme.colors.primaryGreen1
                 )
             }
             Spacer(modifier = modifier.height(10.dp))
-            //캐릭터 사진 들어가야 함
-            Column(
+
+            Image(
+                painter = painterResource(id = R.drawable.img_home_charcter),
+                contentDescription = "술비티아이 캐릭터",
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .height(300.dp)
-                    .background(JJanPicialTheme.colors.gray300),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ){
-                Text(
-                    text = "캐릭터 이미지",
-                )
-            }
+                    .size(300.dp)
+                    .align(Alignment.CenterHorizontally)
+            )
 
-            Spacer(modifier = modifier.height(10.dp))
+            //Spacer(modifier = modifier.height(10.dp))
 
-            Column(
+            Row(
                 modifier = modifier
                     .fillMaxWidth()
                     .clip(shape = RoundedCornerShape(8.dp))
                     .background(JJanPicialTheme.colors.white)
-                    .padding(vertical =25.dp, horizontal = 20.dp),
+                    .padding(vertical =18.dp, horizontal = 35.dp),
+                horizontalArrangement = Arrangement.SpaceBetween
             ){
                 Row(
                     modifier = modifier,
@@ -149,7 +149,7 @@ fun JiwonScreen(
                     )
                     Spacer(modifier = modifier.width(10.dp))
                     Text(
-                        text = "2.5 JP",
+                        text = "${userState?.jpLevel} JP",
                         style = JJanPicialTheme.typography.head3Bold,
                         color = JJanPicialTheme.colors.primaryGreen1
                     )
@@ -160,53 +160,109 @@ fun JiwonScreen(
                     verticalAlignment = Alignment.CenterVertically
                 ){
                     Text(
-                        text = "누적 병",
+                        text = "파트",
                         style = JJanPicialTheme.typography.body1Bold,
                         color = JJanPicialTheme.colors.black
                     )
                     Spacer(modifier = modifier.width(10.dp))
                     Text(
-                        text = "48 병",
+                        text = "${userState?.part}",
                         style = JJanPicialTheme.typography.head3Bold,
                         color = JJanPicialTheme.colors.primaryGreen1
                     )
                 }
-
-
             }
         }
 
-        Spacer(modifier = modifier.height(15.dp))
+        Spacer(modifier = modifier.height(30.dp))
 
-        Column(
-            modifier = Modifier
-                .clip(shape = RoundedCornerShape(8.dp))
-                .height(200.dp)
-                .fillMaxWidth()
-                .background(JJanPicialTheme.colors.primaryGreen1)
-                .padding(horizontal = 15.dp, vertical = 15.dp),
-            verticalArrangement = Arrangement.Top
-        ) {
+        Row(
+            modifier = modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
 
+        ){
+            Text(
+                text = "나의 랭킹은요...",
+                style = JJanPicialTheme.typography.head2Bold,
+                color = JJanPicialTheme.colors.black
+            )
 
-            Row(
-                modifier = modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
-            ){
+            homeScreenChip(
+                onClick = navigateToMinseo,
+                modifier = Modifier,
+                content = "랭킹 확인"
+            )
+        }
 
-                Text(
-                    text = "랭킹",
-                    style = JJanPicialTheme.typography.head3Bold,
-                    color = JJanPicialTheme.colors.white
-                )
+        Spacer(modifier = modifier.height(10.dp))
 
-                homeScreenChip(
-                    modifier = modifier,
-                    onClick = navigateToMinseo,
-                    content = "전체랭킹 >"
-                )
+        Row(
+            modifier = modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(10.dp)
+        ){
+            Column(
+                modifier = Modifier
+                    .clip(shape = RoundedCornerShape(8.dp))
+                    .weight(1f)
+                    .aspectRatio(1.5f)
+                    .background(JJanPicialTheme.colors.primaryGreen1)
+                    .padding(horizontal = 15.dp, vertical = 15.dp),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Column(
+                    modifier = modifier.fillMaxWidth(),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ){
+
+                    Text(
+                        text = "개인 랭킹",
+                        style = JJanPicialTheme.typography.head3Bold,
+                        color = JJanPicialTheme.colors.white
+                    )
+
+                    Spacer(modifier = modifier.height(10.dp))
+
+                    Text(
+                        text = "${userState?.ranking}위",
+                        style = JJanPicialTheme.typography.head1Bold,
+                        color = JJanPicialTheme.colors.white
+                    )
+                }
             }
+
+            Column(
+                modifier = Modifier
+                    .clip(shape = RoundedCornerShape(8.dp))
+                    .weight(1f)
+                    .aspectRatio(1.5f)
+                    .background(JJanPicialTheme.colors.gray600)
+                    .padding(horizontal = 15.dp, vertical = 15.dp),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Column(
+                    modifier = modifier.fillMaxWidth(),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ){
+
+                    Text(
+                        text = "파트 랭킹",
+                        style = JJanPicialTheme.typography.head3Bold,
+                        color = JJanPicialTheme.colors.white
+                    )
+
+                    Spacer(modifier = modifier.height(10.dp))
+
+                    Text(
+                        text = "${userState?.partRanking}위",
+                        style = JJanPicialTheme.typography.head1Bold,
+                        color = JJanPicialTheme.colors.white
+                    )
+                }
+            }
+
+
         }
 
     }

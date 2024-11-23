@@ -24,13 +24,13 @@ fun homeScreenChip(
     Box(
         modifier = Modifier
             .clickable {onClick()}
-            .clip(RoundedCornerShape(8.dp))
-            .background(JJanPicialTheme.colors.white)
+            .clip(RoundedCornerShape(6.dp))
+            .background(JJanPicialTheme.colors.gray200)
             .padding(vertical = 4.dp, horizontal = 8.dp),
     ){
         Text(
             text = content,
-            style = JJanPicialTheme.typography.body3Regular,
+            style = JJanPicialTheme.typography.body4Regular,
             color = JJanPicialTheme.colors.gray700,
         )
     }
@@ -42,6 +42,6 @@ fun homeScreenChipPreview(){
     homeScreenChip(
         onClick = {},
         modifier = Modifier,
-        content = "전체랭킹 >"
+        content = "랭킹 확인"
     )
 }

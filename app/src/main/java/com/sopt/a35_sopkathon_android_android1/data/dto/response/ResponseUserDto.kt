@@ -5,16 +5,18 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class ResponseUserDto(
-    @SerialName("id") //이건 JSON을 통해 들어오는 이름
-    val id: Int,      //이건 우리가 사용할 이름
     @SerialName("name")
     val name: String,
-    @SerialName("alcohollevel")
-    val alcohollevel: Int,
+    @SerialName("jpLevel")
+    val jpLevel: Double,
     @SerialName("cumulative")
     val cumulative: Int,
+    @SerialName("part")
+    val part: String,
     @SerialName("jbti")
     val jbti: String,
     @SerialName("ranking")
     val ranking: Int,
+    @SerialName("partRanking")
+    val partRanking: Int
 )

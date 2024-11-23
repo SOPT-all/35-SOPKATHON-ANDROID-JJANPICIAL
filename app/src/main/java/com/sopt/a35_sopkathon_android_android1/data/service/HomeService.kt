@@ -6,10 +6,9 @@ import com.sopt.a35_sopkathon_android_android1.data.dto.response.ExampleResponse
 import com.sopt.a35_sopkathon_android_android1.data.dto.response.ResponseUserDto
 import retrofit2.http.Body
 import retrofit2.http.GET
-import retrofit2.http.POST
 
 interface HomeService {
     @GET("api/user")
-    suspend fun getUserData(): ApiResponse<ResponseUserDto>
+    suspend fun getUserData(): ResponseUserDto
 
 }
