@@ -27,6 +27,7 @@ import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanPicialTheme
 @Composable
 fun MinjaeScreen5Route(
     minjaeViewModel: MinjaeViewModel,
+    navigateToJiwon: () -> Unit,
 ) {
     LaunchedEffect(Unit) {
         minjaeViewModel.getUserInfo()
@@ -34,14 +35,16 @@ fun MinjaeScreen5Route(
 
     MinjaeScreen5(
         userJpLevel = minjaeViewModel.userJpLevel.collectAsState().value,
-        userJbti = minjaeViewModel.userJbti.collectAsState().value
+        userJbti = minjaeViewModel.userJbti.collectAsState().value,
+        navigateToJiwon = navigateToJiwon
     )
 }
 
 @Composable
 fun MinjaeScreen5(
     userJpLevel: Double,
-    userJbti: String
+    userJbti: String,
+    navigateToJiwon: () -> Unit,
 ) {
     Column(
         modifier = Modifier
@@ -105,7 +108,7 @@ fun MinjaeScreen5(
             title = "짠-피셜 시작하기",
             enabled = true,
             modifier = Modifier.fillMaxWidth(),
-            onClick = {}
+            onClick = navigateToJiwon
         )
     }
 }

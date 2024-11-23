@@ -4,6 +4,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
+import com.sopt.a35_sopkathon_android_android1.presentation.main.navigateToJiwon
 import com.sopt.a35_sopkathon_android_android1.presentation.main.navigateToMinjae2
 import com.sopt.a35_sopkathon_android_android1.presentation.main.navigateToMinjae3
 import com.sopt.a35_sopkathon_android_android1.presentation.main.navigateToMinjae4
@@ -20,7 +21,7 @@ fun NavGraphBuilder.minjaeNavGraph(
         composable(
             route = "minjae1"
         ) {
-            MinjaeRoute(
+            MinjaeScreenRoute(
                 minjaeViewModel = minjaeViewModel,
                 navigateToMinjae2 = { navController.navigateToMinjae2() }
             )
@@ -54,6 +55,7 @@ fun NavGraphBuilder.minjaeNavGraph(
         ) {
             MinjaeScreen5Route(
                 minjaeViewModel = minjaeViewModel,
+                navigateToJiwon = { navController.navigateToJiwon() }
             )
         }
     }

@@ -17,7 +17,6 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.sopt.a35_sopkathon_android_android1.presentation.jiwon.JiwonRoute
 import com.sopt.a35_sopkathon_android_android1.presentation.main.component.JJanBattleDialog
-import com.sopt.a35_sopkathon_android_android1.presentation.minjae.MinjaeRoute
 import com.sopt.a35_sopkathon_android_android1.presentation.minjae.MinjaeViewModel
 import com.sopt.a35_sopkathon_android_android1.presentation.minjae.minjaeNavGraph
 import com.sopt.a35_sopkathon_android_android1.presentation.minseo.MinseoRoute
@@ -30,7 +29,6 @@ fun MainNavHost(
 ) {
     var showDialog by remember { mutableStateOf(false) }
     var userName by remember { mutableStateOf("") }
-
     val minjaeViewModel: MinjaeViewModel = viewModel()
 
     Box(
