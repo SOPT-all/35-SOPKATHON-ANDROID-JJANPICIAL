@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.sopt.a35_sopkathon_android_android1.R
 import com.sopt.a35_sopkathon_android_android1.presentation.jiwon.homeScreenComponent.homeScreenChip
+import com.sopt.a35_sopkathon_android_android1.presentation.minjae.roundToTwoDecimalPlaces
 import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanPicialTheme
 
 @Composable
@@ -149,7 +150,7 @@ fun JiwonScreen(
                     )
                     Spacer(modifier = modifier.width(10.dp))
                     Text(
-                        text = "${userState?.jpLevel} JP",
+                        text = "${roundToTwoDecimalPlacesNullable(userState?.jpLevel)} JP",
                         style = JJanPicialTheme.typography.head3Bold,
                         color = JJanPicialTheme.colors.primaryGreen1
                     )
@@ -261,11 +262,13 @@ fun JiwonScreen(
                     )
                 }
             }
-
-
         }
 
     }
+}
+
+fun roundToTwoDecimalPlacesNullable(value: Double?): Double {
+    return "%.2f".format(value).toDouble()
 }
 
 
