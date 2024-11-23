@@ -5,6 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -15,6 +16,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -131,47 +133,56 @@ fun JiwonScreen(
 
             //Spacer(modifier = modifier.height(10.dp))
 
-            Row(
+            Box(
                 modifier = modifier
                     .fillMaxWidth()
                     .clip(shape = RoundedCornerShape(8.dp))
                     .background(JJanPicialTheme.colors.white)
-                    .padding(vertical =18.dp, horizontal = 35.dp),
-                horizontalArrangement = Arrangement.SpaceBetween
+                    .padding(vertical =18.dp, horizontal = 18.dp),
+                contentAlignment = Alignment.Center
+
             ){
                 Row(
-                    modifier = modifier,
-                    verticalAlignment = Alignment.CenterVertically
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center
                 ){
-                    Text(
-                        text = "JP지수",
-                        style = JJanPicialTheme.typography.body1Bold,
-                        color = JJanPicialTheme.colors.black
-                    )
-                    Spacer(modifier = modifier.width(10.dp))
-                    Text(
-                        text = "${userState?.jpLevel} JP",
-                        style = JJanPicialTheme.typography.head3Bold,
-                        color = JJanPicialTheme.colors.primaryGreen1
-                    )
+                    Row(
+                        modifier = modifier,
+                        verticalAlignment = Alignment.CenterVertically
+                    ){
+                        Text(
+                            text = "JP지수",
+                            style = JJanPicialTheme.typography.body1Bold,
+                            color = JJanPicialTheme.colors.black
+                        )
+                        Spacer(modifier = modifier.width(10.dp))
+                        Text(
+                            text = "${userState?.jpLevel} JP",
+                            modifier = Modifier.wrapContentWidth(),
+                            style = JJanPicialTheme.typography.head3Bold,
+                            color = JJanPicialTheme.colors.primaryGreen1
+                        )
+                    }
+                    Spacer(modifier = modifier.width(12.dp))
+                    Row(
+                        modifier = modifier,
+                        verticalAlignment = Alignment.CenterVertically
+                    ){
+                        Text(
+                            text = "파트",
+                            modifier = Modifier.wrapContentWidth(),
+                            style = JJanPicialTheme.typography.body1Bold,
+                            color = JJanPicialTheme.colors.black
+                        )
+                        Spacer(modifier = modifier.width(10.dp))
+                        Text(
+                            text = "${userState?.part}",
+                            style = JJanPicialTheme.typography.head3Bold,
+                            color = JJanPicialTheme.colors.primaryGreen1
+                        )
+                    }
                 }
-                Spacer(modifier = modifier.height(20.dp))
-                Row(
-                    modifier = modifier,
-                    verticalAlignment = Alignment.CenterVertically
-                ){
-                    Text(
-                        text = "파트",
-                        style = JJanPicialTheme.typography.body1Bold,
-                        color = JJanPicialTheme.colors.black
-                    )
-                    Spacer(modifier = modifier.width(10.dp))
-                    Text(
-                        text = "${userState?.part}",
-                        style = JJanPicialTheme.typography.head3Bold,
-                        color = JJanPicialTheme.colors.primaryGreen1
-                    )
-                }
+
             }
         }
 
