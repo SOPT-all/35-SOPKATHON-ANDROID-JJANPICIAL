@@ -23,7 +23,11 @@ object ApiFactory {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(client)
-            .addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
+            .addConverterFactory(
+                Json {
+                    ignoreUnknownKeys = true
+                }.asConverterFactory("application/json".toMediaType())
+            )
             .build()
     }
 
@@ -32,4 +36,5 @@ object ApiFactory {
 
 object ServicePool {
     val exampleService = ApiFactory.create<ExampleService>()
+    val homeService = ApiFactory.create<HomeService>()
 }
