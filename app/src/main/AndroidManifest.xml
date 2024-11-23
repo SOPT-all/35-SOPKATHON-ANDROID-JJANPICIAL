@@ -19,6 +19,7 @@
             android:name=".presentation.main.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme._35SOPKATHONANDROIDandroid1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
