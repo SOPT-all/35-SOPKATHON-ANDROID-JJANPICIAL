@@ -150,7 +150,7 @@ fun JiwonScreen(
                     )
                     Spacer(modifier = modifier.width(10.dp))
                     Text(
-                        text = "${roundToTwoDecimalPlacesNullable(userState?.jpLevel)} JP",
+                        text = "${userState?.jpLevel} JP",
                         style = JJanPicialTheme.typography.head3Bold,
                         color = JJanPicialTheme.colors.primaryGreen1
                     )
@@ -266,11 +266,6 @@ fun JiwonScreen(
 
     }
 }
-
-fun roundToTwoDecimalPlacesNullable(value: Double?): Double {
-    return "%.2f".format(value).toDouble()
-}
-
 
 @Preview(showBackground = true)
 @Composable
