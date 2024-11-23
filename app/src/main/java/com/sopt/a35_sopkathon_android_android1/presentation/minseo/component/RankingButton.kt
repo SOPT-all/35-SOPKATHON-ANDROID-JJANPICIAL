@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
@@ -22,7 +21,7 @@ import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanPicialTheme
 fun RankingButton(
     modifier: Modifier = Modifier,
     part: String,
-    onClick: () -> Unit
+    onClick: () -> Unit,
 ) {
     val interactionSource = remember { MutableInteractionSource() }
 
@@ -30,7 +29,7 @@ fun RankingButton(
         modifier = modifier
             .padding(bottom = 8.dp)
             .fillMaxWidth()
-            .aspectRatio(160f/73f)
+            .aspectRatio(160f / 73f)
             .background(color = JJanPicialTheme.colors.gray100, shape = RoundedCornerShape(8.dp))
             .clickable(
                 interactionSource = interactionSource,

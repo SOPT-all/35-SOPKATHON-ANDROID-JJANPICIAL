@@ -27,7 +27,7 @@ import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanPicialTheme
 
 @Composable
 fun RankingPartScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Column(
         modifier = modifier
@@ -55,7 +55,7 @@ fun RankingPartScreen(
             contentDescription = null,
             modifier = Modifier
                 .fillMaxWidth()
-                .aspectRatio(328f/222f),
+                .aspectRatio(328f / 222f),
             contentScale = ContentScale.Crop
         )
         Spacer(Modifier.height(20.dp))

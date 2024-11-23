@@ -10,7 +10,9 @@ import retrofit2.Retrofit
 
 object ApiFactory {
     private val BASE_URL: String = BuildConfig.BASE_URL
-
+    private val json = Json {
+        ignoreUnknownKeys = true
+    }
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
     }
@@ -23,7 +25,7 @@ object ApiFactory {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(client)
-            .addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
+            .addConverterFactory(json.asConverterFactory("application/json".toMediaType()))
             .build()
     }
 
@@ -32,4 +34,5 @@ object ApiFactory {
 
 object ServicePool {
     val exampleService = ApiFactory.create<ExampleService>()
+    val rankingService: RankingService by lazy { ApiFactory.create() }
 }

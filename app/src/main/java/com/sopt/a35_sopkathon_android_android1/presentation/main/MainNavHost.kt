@@ -35,11 +35,16 @@ fun MainNavHost(
             }
 
             composable(route = "sehun") {
-                SehunRoute()
+                SehunRoute(
+                    onBackPressed = {},
+                    onBattleClick = {},
+                )
             }
 
             composable(route = "minseo") {
-                MinseoRoute()
+                MinseoRoute(
+                    onBattleClick = {},
+                )
             }
 
             composable(route = "minjae") {

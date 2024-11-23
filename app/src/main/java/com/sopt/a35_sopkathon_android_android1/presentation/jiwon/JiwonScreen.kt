@@ -12,7 +12,7 @@ import com.sopt.a35_sopkathon_android_android1.ui.theme.JJanPicialTheme
 
 @Composable
 fun JiwonRoute(
-    navigateToMinjae: () -> Unit
+    navigateToMinjae: () -> Unit,
 ) {
     JiwonScreen(
         navigateToMinjae = navigateToMinjae
@@ -21,7 +21,7 @@ fun JiwonRoute(
 
 @Composable
 fun JiwonScreen(
-    navigateToMinjae: () -> Unit
+    navigateToMinjae: () -> Unit,
 ) {
     Box(
         modifier = Modifier.fillMaxSize(),
