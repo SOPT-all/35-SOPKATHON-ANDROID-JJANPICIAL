@@ -74,7 +74,7 @@ fun RankingPartScreen(
                     .fillMaxWidth()
                     .weight(1f)
             ) {
-                Box{
+                Box {
                     RankingButton(part = "기획", onClick = {})
                     Image(
                         painter = painterResource(R.drawable.img_chip_ranking_rank2),
@@ -86,7 +86,7 @@ fun RankingPartScreen(
                     )
                 }
                 RankingButton(part = "웹", onClick = {})
-                Box{
+                Box {
                     RankingButton(part = "안드", onClick = {})
                     Image(
                         painter = painterResource(R.drawable.img_chip_ranking_rank3),
@@ -107,7 +107,7 @@ fun RankingPartScreen(
             ) {
                 RankingButton(part = "디자인", onClick = {})
                 RankingButton(part = "아요", onClick = {})
-                Box{
+                Box {
                     RankingButton(part = "서버", onClick = {})
                     Image(
                         painter = painterResource(R.drawable.img_chip_ranking_rank1),
